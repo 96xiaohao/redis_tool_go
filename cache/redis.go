@@ -234,3 +234,14 @@ func (htr *htRedis) HGETALL(keyName string) (value map[string]string, err error)
 	}
 	return result, nil
 }
+
+func (htr *htRedis) SetEX(key string, value interface{}, ex int) (ok bool, err error) {
+	var valueStr []byte
+	if valueStr, err = json.Marshal(value); err != nil {
+		return false, err
+	}
+	if _, err := redis.String(htr.Do("SET", key, string(valueStr), "EX", ex)); err != nil {
+		return false, err
+	}
+	return true, nil
+}
