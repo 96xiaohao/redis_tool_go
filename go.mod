@@ -1,4 +1,4 @@
-module redis_tool_go
+module github.com/96xiaohao/redis_tool_go
 
 go 1.14
 
