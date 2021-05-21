@@ -1,4 +1,4 @@
-package cache
+package cache_v0
 
 import (
 	"github.com/sirupsen/logrus"
