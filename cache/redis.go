@@ -11,8 +11,8 @@ type htRedis struct {
 var redisInstanceTool *htRedis
 var isOpen string
 
-func TransmitRedisPool(redisPool *htRedis,cacheIsOpen string)  {
-	redisInstanceTool = redisPool
+func TransmitRedisPool(redisPool *redis.Pool,cacheIsOpen string)  {
+	redisInstanceTool.pool = redisPool
 	isOpen = cacheIsOpen
 }
 
