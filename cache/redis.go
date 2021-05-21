@@ -12,6 +12,7 @@ var redisInstanceTool *htRedis
 var isOpen string
 
 func TransmitRedisPool(redisPool *redis.Pool,cacheIsOpen string)  {
+	redisInstanceTool = &htRedis{}
 	redisInstanceTool.pool = redisPool
 	isOpen = cacheIsOpen
 }
